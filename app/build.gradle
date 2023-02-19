@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -42,6 +43,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "android.arch.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 
     def fragment_version = "1.5.5"
     implementation "androidx.fragment:fragment:$fragment_version"

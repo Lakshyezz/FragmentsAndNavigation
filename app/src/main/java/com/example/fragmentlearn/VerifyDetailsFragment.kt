@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.fragment.navArgs
 
 class VerifyDetailsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +19,17 @@ class VerifyDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_verify_details, container, false)
+        val rootView =  inflater.inflate(R.layout.fragment_verify_details, container, false)
+//        val name = arguments?.getString("name")
+//        val mobile = arguments?.getLong("mobile")
+        val args: VerifyDetailsFragmentArgs by navArgs()
+        val name = args.name
+        val mobile = args.mobile
+       val textName = rootView.findViewById<TextView>(R.id.tv_name)
+        textName.setText(name)
+        val textMobile = rootView.findViewById<TextView>(R.id.tv_mobile_number)
+        textMobile.setText(mobile.toString())
+        return rootView
     }
 
 
